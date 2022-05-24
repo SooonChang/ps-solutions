@@ -106,46 +106,6 @@ import time
 
 ### 4-3
 # # N : 0, E : 1, S : 2, W : 3
-n, m = map(int, input().split())
-x, y, d = map(int, input().split())
-board = [[0]*m for _ in range(n)]
-for i in range(n):
-    board[i] = list(map(int,input().split()))
-
-dir = [0, 1, 2, 3]
-steps = [(0, -1), (1, 0), (0, 1), (-1, 0)]
-cnt = 1
-iter_ = 0
-trace = []
-trace.append((x,y))
-
-while True:
-    d = dir[d - 1]
-    nx = x + steps[d][0]
-    ny = y + steps[d][1]
-    been = False
-    for i in trace:
-            if i == (nx, ny):
-                been = True
-    if board[ny][nx] == 0 and been:
-        x = nx
-        y = ny
-        trace.append((nx, ny))
-        cnt += 1
-        iter_ = 0
-        continue
-    else:
-        iter_ +=1
-    if iter_ == 4:
-        nx = x - steps[d][0]
-        ny = y - steps[d][1]
-        if board[ny][nx] !=0:
-            break
-        else:
-            x = nx
-            y = ny
-            iter_ = 0
-print(cnt)
 ########################
 # n, m = map(int, input().split())
 # x, y, direction = map(int, input().split())
