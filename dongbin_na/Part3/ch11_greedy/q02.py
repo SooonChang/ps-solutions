@@ -1,6 +1,3 @@
-from numpy import array_split
-
-
 array = list(map(int, input()))
 
 result = int(array[0])
