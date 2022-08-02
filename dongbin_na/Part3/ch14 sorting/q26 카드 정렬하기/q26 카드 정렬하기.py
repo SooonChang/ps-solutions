@@ -1,10 +1,13 @@
 import heapq
+import sys
+input = sys.stdin.readline
 
 n = int(input())
 data = []
 for _ in range(n):
-    heapq.heappush(data, int(input()))
+    data.append(int(input()))
 
+heapq.heapify(data)
 total_sum = 0
 while True:
     first = heapq.heappop(data)
